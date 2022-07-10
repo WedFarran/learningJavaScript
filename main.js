@@ -41,7 +41,7 @@ const person ={firstName:'Wed',lastName:'Farran',age:23,hobbies:['music','movies
 console.log(person,person.hobbies[1],person.addres.city)
 
 person.email = 'wedfarran6@gmail.com'
-console.log(person,person.email)*/
+console.log(person,person.email)
 
 const todos = [
     {
@@ -64,7 +64,7 @@ const todos = [
         text: 'complete SRS documentation',
         isCompleted:false
     }
-]
+]*/
 /*console.log(todos)
 console.log(todos[1].text)
 
@@ -145,8 +145,60 @@ const addNumber = (num1=3,num2=4)=>num1*num2
 console.log(addNumber(5,8))
 
 const add = num1 =>num1+5
-console.log(add(20))*/
+console.log(add(20))
 
 //oop
+// constructor function
+function Person(firstName , lastName , dob){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.dob = new Date(dob)*/
+ /*   this.getBirthYear = function () {//not really good aproach
+        return this.dob.getFullYear()
+    }
+    this.getFullName = function () {//not really good aproach
+        return `this is ${this.firstName} ${this.lastName}`;
+    }
+}
+// the better aproach 
+Person.prototype.getBirthYear=function (){
+    return this.dob.getFullYear()
+}
 
+Person.prototype.getFullName=function (){
+    return `this is ${this.firstName} ${this.lastName}`
+}
 
+//class   syntactic sugar 
+class Personn{
+    constructor(firstName,lastName,dob){
+        this.firstName = firstName
+    this.lastName = lastName
+    this.dob = new Date(dob)
+    }
+    getBirthYear(){return this.dob.getFullYear()}
+    getFullName(){return `this is ${this.firstName} ${this.lastName}`}
+} 
+// instatiate object 
+const person1 = new Person('wed', 'farran','9/5/1998') 
+const person2 = new Person('both', 'sh','5/9/1997')
+
+const person3= new Personn('wed', 'farran','9/5/1998') 
+const person4 = new Personn('both', 'sh','5/9/1997')
+console.log(person1.dob)
+console.log(person1.getBirthYear())
+console.log(person1.getFullName()) 
+
+console.log(person3.getBirthYear()) 
+console.log(person3.getFullName()) */
+
+//Single element selector 
+console.log(document.getElementById('my-form'))
+console.log(document.querySelector('h1'))
+//Multipiple element selector 
+console.log(document.querySelectorAll('.item'))
+console.log(document.getElementsByClassName('item'))
+console.log(document.getElementsByName('li'))
+
+const items = document.querySelectorAll('.item')
+items.forEach((item)=>console.log(item))
