@@ -190,7 +190,7 @@ console.log(person1.getBirthYear())
 console.log(person1.getFullName()) 
 
 console.log(person3.getBirthYear()) 
-console.log(person3.getFullName()) */
+console.log(person3.getFullName()) 
 
 //Single element selector 
 console.log(document.getElementById('my-form'))
@@ -202,3 +202,44 @@ console.log(document.getElementsByName('li'))
 
 const items = document.querySelectorAll('.item')
 items.forEach((item)=>console.log(item))
+const ul =document.querySelector('.items')
+//console.log(ul.remove())
+//ul.lastElementChild.remove()
+ul.firstElementChild.textContent = 'Hello'
+ul.children[1].innerText = 'wed'
+ul.lastElementChild.innerHTML = '<h1> Hello</h1>'
+const btn = document.querySelector('.btn')
+//btn.style.background = 'red'
+
+btn.addEventListener('click',(e)=>{
+    e.preventDefault()
+   // document.querySelector('#my-form').style.background = 'red'
+    document.querySelector('body').classList.add('bg-dark')
+    document.querySelector('.items').lastElementChild.innerHTML = '<h1> Hello</h1>'
+
+})*/
+
+
+const myForm = document.querySelector('#my-form')
+const nameInput = document.querySelector('#name')
+const emailInput = document.querySelector('#email')
+const msg = document.querySelector('.msg')
+const userList = document.querySelector('#users')
+
+myForm.addEventListener('submit', onsubmit)
+
+function onsubmit(e){
+    e.prevenDefault()
+     if(nameInput.value === '' || emailInput.value === ''){
+        msg.classList.add('error')
+        msg.innerHTML = 'pleads enter fields'
+  setTimeout(()=>msg.remove(),3000)
+     }else {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${emailInput.value}`))
+        userList.append(li)
+
+        nameInput.value=''
+        emailInput.value=''
+     }
+}
